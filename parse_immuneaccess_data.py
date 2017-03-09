@@ -5,6 +5,7 @@ output = "control_data.csv"
 
 with open(datafile, 'r') as f, open(output, 'w') as o:
     
+    
     header = f.readline().strip().split('\t')
     v_pos = header.index('v_gene')
     v_fam_pos = header.index('v_family')
@@ -13,7 +14,9 @@ with open(datafile, 'r') as f, open(output, 'w') as o:
     cdr3_pos = header.index('amino_acid')
     frame_pos = header.index('frame_type')
     
-    o.write('V_gene,CDR3_sequence,J_gene,HLA_peptide')
+    out_header = 'V_gene,CDR3_sequence,J_gene,HLA_peptide'
+    
+    data = []
     
     for line in f:
         splitline = line.strip().split('\t')
@@ -30,4 +33,8 @@ with open(datafile, 'r') as f, open(output, 'w') as o:
             else:
                 j_gene = splitline[j_fam_pos]
                 
-            o.write('\n'+','.join([v_gene.replace('TCRBV',''), splitline[cdr3_pos], j_gene.replace('TCRBJ','')])+',Control')
+            data.append('\n'+','.join([v_gene.replace('TCRBV',''), splitline[cdr3_pos], j_gene.replace('TCRBJ','')])+',Control')
+            
+    o.write(out_header)
+    for line in set(data):
+        o.write(line)
