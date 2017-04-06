@@ -8,6 +8,9 @@ Contact
 -------
 
 Nicolas De Neuter
+
 nicolas.deneuter(at)uantwerpen.be
+
 University of Antwerp
+
 ADReM/biomina
