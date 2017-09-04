@@ -6,16 +6,16 @@ Current T-cell epitope prediction tools are a valuable resource in designing tar
 Dependencies
 ------------
 
-boruta
-IPython
-joblib
-matplotlib
-numpy
-pandas
-seaborn
-pyteomics
-skbio
-sklearn
+* boruta
+* IPython
+* joblib
+* matplotlib
+* numpy
+* pandas
+* seaborn
+* pyteomics
+* skbio
+* sklearn
 
 Contact
 -------
